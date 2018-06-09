@@ -38,7 +38,8 @@ class SunshinetourSpider(scrapy.Spider):
         ]
 
     def __init__(self):
-        self._driver = webdriver.Chrome('/Users/artur/PycharmProjects/checkatrade/checkatrade/chromedriver')
+        # self._driver = webdriver.Chrome('/Users/artur/PycharmProjects/checkatrade/checkatrade/chromedriver')
+        self._driver = webdriver.PhantomJS('/home/ubuntu/checkatrade/checkatrade/phantomjs')
 
     def parse(self, response):
         urls = response.xpath('//table[@class="directory"]/tbody/tr/td/a/@href').extract()[:5]

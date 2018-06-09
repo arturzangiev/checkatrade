@@ -5,7 +5,7 @@ from scrapy.contrib.exporter import CsvItemExporter
 
 class CsvPipeline(object):
     def __init__(self):
-        self.file = open("booksdata.csv", 'wb')
+        self.file = open("/home/ubuntu/checkatrade/checkatrade/checkatrade/output/items.csv", 'wb')
         self.exporter = CsvItemExporter(self.file)
         self.exporter.start_exporting()
 
