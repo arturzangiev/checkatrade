@@ -42,7 +42,7 @@ class SunshinetourSpider(scrapy.Spider):
         self._driver = webdriver.PhantomJS('/home/ubuntu/checkatrade/checkatrade/phantomjs')
 
     def parse(self, response):
-        urls = response.xpath('//table[@class="directory"]/tbody/tr/td/a/@href').extract()[:5]
+        urls = response.xpath('//table[@class="directory"]/tbody/tr/td/a/@href').extract()
         for url in urls:
             full_url = response.urljoin(url)
             yield scrapy.Request(full_url, callback=self.individual_page)
